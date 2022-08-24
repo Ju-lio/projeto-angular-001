@@ -1,0 +1,84 @@
+.container {
+   width: 100%;
+   padding-top: 50px;
+   background-color: #0C0C0C;
+}
+
+h1 {
+   font-size: 22pt;
+   color: white;
+   margin: 5px 50px;
+}
+.midias {
+   display: flex;
+   position: relative;
+}
+
+.midias div {
+   position: relative;
+   display: flex;
+   overflow: hidden;
+   padding: 0 100px;
+}
+
+#prior, #next {
+   position: absolute;
+   width: 15px;
+   height: 240px;
+   z-index: 1;
+   cursor: pointer;
+}
+
+#prior:hover, #next:hover {
+   width: 30px;
+}
+
+#prior {
+   left: 0;
+   background-image: linear-gradient(to right,#0C0C0C , #0C0C0C , transparent);
+   transition: 0.5s all ease;
+}
+
+#prior::after {
+   content: '';
+   left: 25px;
+   position: absolute;
+   top: calc(50% - 12.5px);
+   border-top: 15px solid transparent;
+   border-right: 25px solid #FFFFFF09;
+   border-bottom: 15px solid transparent;
+
+   transition: 0.5s all ease;
+}
+
+#prior:hover::after{
+   left: 75px;
+   border-top: 15px solid transparent;
+   border-right: 25px solid #FFFFFFB4;
+   border-bottom: 15px solid transparent;
+}
+
+#next {
+   right: 0;
+   background-image: linear-gradient(to left,#0C0C0C , #0C0C0C , transparent);
+   transition: 0.5s all ease;
+}
+
+#next::after {
+   content: '';
+   right: 25px;
+   position: absolute;
+   top: calc(50% - 12.5px);
+   border-top: 15px solid transparent;
+   border-left: 25px solid #FFFFFF09;
+   border-bottom: 15px solid transparent;
+
+   transition: 0.5s all ease;
+}
+
+#next:hover::after{
+   right: 75px;
+   border-top: 15px solid transparent;
+   border-left: 25px solid #FFFFFFB4;
+   border-bottom: 15px solid transparent;
+}

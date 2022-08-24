@@ -1,0 +1,82 @@
+header {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   color: white;
+   background-image: linear-gradient(to right,#0C0C0C, transparent);
+}
+
+.fundo {
+   height: 100%;
+   background-image: radial-gradient(#0000004d, #0C0C0C);
+}
+
+ul {
+   padding: 125px 0 0 100px;
+   display: flex;
+}
+
+li {
+   list-style: none;
+   margin: 15px 8px;
+   width: 17px;
+   height: 17px;
+   border-radius: 50%;
+   background-color: #FFFFFF1A;
+
+   transition-property: all;
+   transition-duration: 500ms;
+}
+
+li:hover {
+   cursor: pointer;
+   background-color: #FFFFFFB7;
+   font-size: 34pt;
+   width: 18px;
+   height: 18px;
+}
+
+.active {
+   background-color: #FFFFFFB7;
+   width: 18px;
+   height: 18px;
+}
+
+<<<<<<< HEAD
+.destaque-1, .destaque-2, .destaque-3 {
+=======
+.dstq-1, .dstq-2, .dstq-3 {
+>>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+   transition-property: all;
+   transition-duration: 2s;
+}
+
+.destaques-img {
+   display: flex;
+}
+
+.destaques-img img {
+   position: absolute;
+   top: 0;
+   z-index: -1;
+   width: 100vw;
+   overflow-y: none;
+   opacity: 0;
+
+
+   transition-property: opacity;
+   transition-duration: 2s;
+}
+
+@media(max-width: 1200px) {
+
+   .destaques-img img {
+      width: auto;
+      height: 100vh;
+   }
+
+}

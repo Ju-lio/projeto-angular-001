@@ -1,0 +1,91 @@
+header, header ul, .header-bar, .header-settings {
+   display: flex;
+   align-items: center;
+}
+
+header {
+   position: absolute;
+   top: 0;
+   width: 100%;
+   font-size: 14pt;
+   color: #999999;
+   fill: #999999;
+}
+
+.button {
+   display: flex;
+   align-items: center;
+   list-style: none;
+   margin: 30px 10px;
+   padding: 10px 15px;
+   background-color: #4646466c;
+   border-radius: 20px;
+   cursor: pointer;
+
+   transition-property: color fill;
+   transition-duration: 200ms;
+}
+
+.button h1 {
+   margin-left: 15px;
+}
+
+.button:hover {
+   color: #D8D8D8;
+   fill: #D8D8D8;
+   background-color: #464646;
+}
+
+.button-selected {
+   color: #D8D8D8;
+   fill: #D8D8D8;
+   background-color: #1D1D1D;
+}
+
+.button .show-text{
+   font-size: 0;
+   margin-left: 0;
+   transition: all 200ms ease;
+}
+
+.button:hover .show-text{
+   display: flex;
+   font-size: 12pt;
+   margin-left: 15px;
+}
+
+.icon {
+   width: 25px;
+   height: 25px;
+}
+
+.header-title {
+   margin: 0 80px;
+   font-size: 22pt;
+   padding: 5px 15px;
+   color: white;
+}
+
+.header-settings {
+   width: 100%;
+   height: 100%;
+   justify-content: flex-end;
+   margin-right: 25px;
+}
+
+#search-bar {
+   outline-style: none;
+   width: 300px;
+   margin-left: 20px;
+   color: white;
+   background-color: transparent;
+
+   transition-property: width;
+   transition-duration: 1s;
+}
+
+.imgPerfil {
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+}

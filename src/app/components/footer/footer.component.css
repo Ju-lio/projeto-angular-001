@@ -1,0 +1,44 @@
+footer {
+   margin: 100px 100px 50px;
+   color: #999999;
+   fill: #999999;
+}
+
+div {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+}
+
+div > h1 {
+   width: 30%;
+}
+
+h1 {
+   font-size: 18pt;
+   font-weight: bold;
+   margin-bottom: 50px;
+}
+
+h2, a{
+   font-size: 12pt;
+   font-weight: normal;
+}
+
+a:hover {
+   fill: white;
+   color: white;
+   cursor: pointer;
+   font-weight: bold;
+}
+
+h3 {
+   font-size: 10pt;
+   font-weight: normal;
+}
+
+svg {
+   margin: 15px;
+   width: 25px;
+   height: 25px;
+}

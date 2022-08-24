@@ -1,0 +1,60 @@
+header {
+   text-align: center;
+}
+
+.image {
+   width: 300px;
+   height: 200px;
+   margin: 15px;
+   background-size: 100% auto;
+   background-position: center;
+   border: 5px solid #1D1D1D;
+}
+
+.image:hover{
+   background-size: 115%;
+   border: 5px solid white;
+   cursor: pointer;
+}
+
+.info {
+   display: flex;
+   flex-direction: column-reverse;
+   width: 100%;
+   height: 100%;
+
+   background-image: linear-gradient(transparent,black);
+}
+
+footer, h1, .image {
+   transition-property: all;
+   transition-duration: 0.5s;
+}
+
+footer {
+   /* display: none; */
+   display: flex;
+   justify-content: center;
+   opacity: 0;
+   font-size: 0;
+   padding-bottom: 10px;
+}
+
+.image:hover footer{
+   font-size: 11pt;
+   opacity: 1;
+}
+
+.image:hover h1{
+   font-size: 16pt;
+   font-weight: bold;
+}
+
+h1 {
+   color: white;
+}
+
+h2 {
+   color: rgb(196, 196, 196);
+   margin-left: 15px;
+}

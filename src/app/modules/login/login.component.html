@@ -1,0 +1,13 @@
+<header>
+   <div>
+      <h1>Quem está assistindo?</h1>
+      <div class="perfis">
+         <div *ngFor="let m of perfis;index as i">
+            <img src="{{perfis[i].src}}" [routerLink]="['home',perfis[i].usr]">
+
+            <h2>{{perfis[i].usuario}}</h2>
+         </div>
+      </div>
+   </div>
+
+</header>

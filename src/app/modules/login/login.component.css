@@ -1,0 +1,43 @@
+header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+   background-color: #0C0C0C;
+   color: white;
+   text-align: center;
+   font-weight: bold;
+}
+
+h1 {
+   font-size: 22pt;
+}
+
+h2 {
+   font-size: 16pt;
+}
+
+.perfis {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.perfis div {
+   margin: 25px;
+}
+
+img {
+   width: 200px;
+   height: 200px;
+   cursor: pointer;
+   border: 5px solid #1D1D1D;
+   outline-style: none;
+
+   transition: 0.2s all ease;
+}
+
+img:hover {
+   transform: scale(1.1);
+}
