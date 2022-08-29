@@ -5,17 +5,10 @@
 		<div id="container" #aba>
 			<app-filme
 			*ngFor="let m of midias;index as i"
-<<<<<<< HEAD
 			[filmeTitulo]="midias[i].titulo | uppercase"
-			[filmeSrc]="'../../../assets/'+midias[i].src"
+			[filmeSrc]="midias[i].src"
 			[filmeAno]="midias[i].ano"
 			[filmeDuracao]="midias[i].duracao | lowercase"
-=======
-			[filmeTitulo]="midias![i].titulo | uppercase"
-			[filmeSrc]="midias![i].src"
-			[filmeAno]="midias![i].ano"
-			[filmeDuracao]="midias![i].duracao | lowercase"
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
 			>
 			</app-filme>
 		</div>

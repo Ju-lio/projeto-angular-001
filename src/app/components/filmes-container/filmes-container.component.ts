@@ -1,13 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-<<<<<<< HEAD
 import { Midia } from 'src/app/models/midia.model';
 
-import { FilmesContainerService } from '../../services/filmes-container.service';
-=======
-import { Midia } from 'src/app/models/models.model';
-
-import { FilmesContainerService } from './filmes-container.service';
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
+import { FilmesContainerService } from 'src/app/services/filmes-container.service';
 
 @Component({
   selector: 'app-filmes-container',
@@ -22,11 +16,7 @@ export class FilmesContainerComponent implements OnInit {
   @Input() genre: string = '';
   scrollValue: number = 0;
 
-<<<<<<< HEAD
   midias: Midia[] = [];
-=======
-  midias?: Midia[];
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
 
   constructor(private filmesContainerService: FilmesContainerService) {}
 
@@ -35,7 +25,6 @@ export class FilmesContainerComponent implements OnInit {
   }
 
   getMidia(idx: number, prop: string) {
-<<<<<<< HEAD
     switch (prop) {
       case 'titulo':
         return this.midias![idx].titulo;
@@ -46,19 +35,7 @@ export class FilmesContainerComponent implements OnInit {
       case 'duracao':
         return this.midias![idx].duracao;
       default:
-        return ''
-=======
-    if (prop == 'titulo') {
-      return this.midias![idx].titulo;
-    } else if (prop == 'src') {
-      return this.midias![idx].src;
-    } else if (prop == 'ano') {
-      return this.midias![idx].ano;
-    } else if (prop == 'duracao') {
-      return this.midias![idx].duracao;
-    } else {
-      return '';
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
+        return '';
     }
   }
 

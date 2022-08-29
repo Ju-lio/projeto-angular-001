@@ -5,14 +5,11 @@ import { LoginComponent } from './modules/login/login.component';
 import { HomeComponent } from './modules/home/home.component';
 
 const APP_ROUTES: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'home/:usr', component: HomeComponent },
-  /*
-    path: 'home/:usr',
+  {
+    path: '',
     loadChildren: () =>
-      import('./modules/home/home.module').then(m => m.HomeModule),
+      import('./modules/login/login.module').then(m => m.LoginModule),
   },
-  */
 ];
 
 export const routing: ModuleWithProviders<RouterModule> =

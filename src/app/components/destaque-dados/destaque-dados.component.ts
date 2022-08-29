@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AppComponent } from '../../app.component';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-destaque-dados',
@@ -12,15 +12,9 @@ export class DestaqueDadosComponent {
   @Input() duracao: string = '';
   @Input() extrelas: string = '';
   @Input() sinopse: string = '';
-<<<<<<< HEAD
   @Input() destaque: string = '';
 
   destaqueFavoritado: boolean = false;
-=======
-  @Input() dstq: string = '';
-
-  dstqFav: boolean = false;
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
 
   constructor(private appComponent: AppComponent) {}
 }

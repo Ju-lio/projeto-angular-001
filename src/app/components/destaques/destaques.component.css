@@ -42,11 +42,7 @@ li:hover {
    height: 18px;
 }
 
-<<<<<<< HEAD
 .destaque-1, .destaque-2, .destaque-3 {
-=======
-.dstq-1, .dstq-2, .dstq-3 {
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;

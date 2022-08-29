@@ -2,7 +2,6 @@
     <div class="fundo">
         <nav>
             <ul>
-<<<<<<< HEAD
                 <li [class.active]="destaque === 'destaque-1'" (click)="changeDestaque('destaque-1')"></li>
                 <li [class.active]="destaque === 'destaque-2'" (click)="changeDestaque('destaque-2')"></li>
                 <li [class.active]="destaque === 'destaque-3'" (click)="changeDestaque('destaque-3')"></li>
@@ -34,58 +33,14 @@
                     [ano]="midia[ destaques[2] ].ano"
                     [duracao]="midia[ destaques[2] ].duracao"
                     [sinopse]="midia[ destaques[2] ].sinopse"
-=======
-                <li [class.active]="destaque === 'dstq-1'" (click)="changeDestaque('dstq-1')"></li>
-
-                <li [class.active]="destaque === 'dstq-2'" (click)="changeDestaque('dstq-2')"></li>
-
-                <li [class.active]="destaque === 'dstq-3'" (click)="changeDestaque('dstq-3')"></li>
-            </ul>
-        </nav>
-
-        <div [ngSwitch]="destaque">
-            <div *ngSwitchDefault>
-                <app-destaque-dados
-                    [titulo]="'BLADE RUNNER 2049'"
-                    [ano]="'2017'"
-                    [duracao]="'2h 43m'"
-                    [sinopse]="'Em Blade Runner 2049, após os problemas enfrentados com os Nexus 8, uma nova espécie de replicantes é desenvolvida, de forma que seja mais obediente aos humanos. Um deles é K (Ryan Gosling), um blade runner que caça replicantes foragidos para a polícia de Los Angeles. Após encontrar Sapper Morton (Dave Bautista), K descobre um fascinante segredo: a replicante Rachel (Sean Young) teve um filho, mantido em sigilo até então. A possibilidade de que replicantes se reproduzam pode desencadear uma guerra deles com os humanos, o que faz com que a tenente Joshi (Robin Wright), chefe de K, o envie para encontrar e eliminar a criança.'"
-                    [extrelas]="''"
-                    >
-                </app-destaque-dados>
-            </div>
-            <div *ngSwitchCase="'dstq-2'">
-                <app-destaque-dados
-                    [titulo]="'THE BATMAN'"
-                    [ano]="'2022'"
-                    [duracao]="'2h 56m'"
-                    [sinopse]="'The Batman segue o segundo ano de Bruce Wayne (Robert Pattinson) como o herói de Gotham, causando medo nos corações dos criminosos da sombria cidade. Com apenas alguns aliados de confiança - Alfred Pennyworth (Andy Serkis) e o tenente James Gordon (Jeffrey Wright) - entre a rede corrupta de funcionários e figuras importantes do distrito, o vigilante solitário se estabeleceu como a única personificação da vingança entre seus concidadãos. Durante uma de suas investigações, Bruce acaba envolvendo a si mesmo e Gordon em um jogo de gato e rato, ao investigar uma série de maquinações sádicas em uma trilha de pistas enigmáticas estabelecida pelo vilão Charada.'"
-                    [extrelas]="''"
-                    >
-                </app-destaque-dados>
-            </div>
-            <div *ngSwitchCase="'dstq-3'">
-                <app-destaque-dados
-                    [titulo]="'EVERYTHING EVERYWHERE ALL AT ONCE'"
-                    [ano]="'2022'"
-                    [duracao]="'2h 19m'"
-                    [sinopse]="'Everything everywhere all at once acompanhamos uma sobrecarregada imigrante chinesa, Evelyn Wang (Michelle Yeoh) que com sua lavanderia à beira do fracasso e seu casamento com o marido covarde em ruínas, ela luta para lidar com tudo, incluindo um relacionamento ruim com seu pai crítico e sua filha (Stephanie Hsu). E, como se não bastasse enfrentar a crise pessoal, Evelyn precisa se preparar para uma reunião desagradável com uma burocrata impessoal: Deirdre (Jamie Lee Curtis), a auditora da Receita Federal. No entanto, à medida que a agente severa perde a paciência, uma inexplicável fenda no multiverso se abre, e se torna uma possibilidade para a exploração reveladora de realidades paralelas.'"
-                    [extrelas]="''"
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
                     >
                 </app-destaque-dados>
             </div>
         </div>
         <div class="destaques-img">
-<<<<<<< HEAD
-            <img [style.opacity]="destaque === 'destaque-1' ? 1 : 0" src="{{'../../../assets/'+midia[ destaques[0] ].src}}">
-            <img [style.opacity]="destaque === 'destaque-2' ? 1 : 0" src="{{'../../../assets/'+midia[ destaques[1] ].src}}">
-            <img [style.opacity]="destaque === 'destaque-3' ? 1 : 0" src="{{'../../../assets/'+midia[ destaques[2] ].src}}">
-=======
-            <img [style.opacity]="destaque === 'dstq-1' ? 1 : 0" src="../../assets/dstq-1.png">
-            <img [style.opacity]="destaque === 'dstq-2' ? 1 : 0" src="../../assets/dstq-2.png">
-            <img [style.opacity]="destaque === 'dstq-3' ? 1 : 0" src="../../assets/dstq-3.png">
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
+            <img [style.opacity]="destaque === 'destaque-1' ? 1 : 0" src="{{midia[ destaques[0] ].src}}">
+            <img [style.opacity]="destaque === 'destaque-2' ? 1 : 0" src="{{midia[ destaques[1] ].src}}">
+            <img [style.opacity]="destaque === 'destaque-3' ? 1 : 0" src="{{midia[ destaques[2] ].src}}">
         </div>
     </div>
 </header>

@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "tabWidth": 2,
   "useTabs": false,
   "singleQuote": true,
@@ -10,15 +9,3 @@
   "bracketSameLine": true,
   "printWidth": 80
 }
-=======
-   "tabWidth": 2,
-   "useTabs": false,
-   "singleQuote": true,
-   "semi": true,
-   "bracketSpacing": true,
-   "arrowParens": "avoid",
-   "trailingComma": "es5",
-   "bracketSameLine": true,
-   "printWidth": 80
- }
->>>>>>> a512e61c8881ea58c2aeef342ea22491c0abeac9
