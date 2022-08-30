@@ -1,13 +1,13 @@
 <app-destaques></app-destaques>
 
 <app-header 
-   [usrPerfil]="perfilLogado[0].usr"
-   [nomPerfil]="perfilLogado[0].usuario"
+   [idPerfil]="perfilLogado[0].id"
+   [nomePerfil]="perfilLogado[0].nome"
    [srcPerfil]="perfilLogado[0].src"
 ></app-header>
 
-<app-filmes-container [containerTitle]="'FILMES MAIS ACESSADOS'" [genre]="'filme'"></app-filmes-container>
+<app-filmes-container [containerTitle]="'FILMES'" [genre]="'filme'"></app-filmes-container>
 
-<app-filmes-container [containerTitle]="'SERIES MAIS ACESSADAS'" [genre]="'serie'"></app-filmes-container>
+<app-filmes-container [containerTitle]="'SERIES'" [genre]="'serie'"></app-filmes-container>
 
 <app-footer></app-footer>

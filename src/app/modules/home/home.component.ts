@@ -10,30 +10,32 @@ import { LoginContainerService } from 'src/app/services/login.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  usr: string = '';
-  inscricao: Subscription | undefined;
+  id: string = 'usr1';
 
   perfilLogado: Perfil[] = [];
+
+  perfis: Perfil[] = [];
+
+  inscricao!: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private loginContainerService: LoginContainerService
   ) {
-    this.usr = this.route.snapshot.params['usr']; //##JSC
-    this.perfilLogado = this.loginContainerService.loadPerfis();
+    this.id = this.route.snapshot.params['id'];
+    this.perfis = this.loginContainerService.loadPerfis();
   }
 
   ngOnInit(): void {
     this.inscricao = this.route.params.subscribe((params: any) => {
-      this.usr = params['usr'];
+      this.id = params['id'];
     });
-
-    this.perfilLogado = this.perfilLogado.filter(perfilLogado => {
-      return perfilLogado.usr === this.usr;
+    this.perfilLogado = this.perfis.filter(p => {
+      return p.id === this.id;
     });
   }
 
   ngOnDestroy() {
-    this.inscricao?.unsubscribe();
+    this.inscricao.unsubscribe();
   }
 }

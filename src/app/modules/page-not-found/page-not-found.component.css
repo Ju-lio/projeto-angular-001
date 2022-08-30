@@ -1,0 +1,33 @@
+body {
+   background-color: #0C0C0C;
+   width: 100vw;
+   height: 100vh;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+p {
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 14pt;
+   font-weight: bold;
+   color: #9174F8;
+}
+
+input {
+   margin-top: 50px;
+   font-weight: bold;
+   color: #4a3d7a;
+   width: 200px;
+   height: 50px;
+   background: linear-gradient( #9174F8, #a697da);
+   border-radius: 5px;
+}
+
+input:hover {
+   color: #9174F8;
+   background: #4a3d7a;
+   cursor: pointer;
+}

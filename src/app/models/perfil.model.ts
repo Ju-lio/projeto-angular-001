@@ -1,5 +1,5 @@
 export type Perfil = {
-  usuario: string;
+  id: string;
+  nome: string;
   src: string;
-  usr: string;
 };

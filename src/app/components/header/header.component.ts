@@ -8,16 +8,16 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 export class HeaderComponent {
   showSearchBar: boolean = false;
 
-  @Input() nomPerfil: string = '';
+  @Input() idPerfil: string = '';
+  @Input() nomePerfil: string = '';
   @Input() srcPerfil: string = '';
-  @Input() usrPerfil: string = '';
 
   @ViewChild('searchBar') searchBar!: ElementRef;
 
   constructor() {}
 
   changeSearchBar() {
-    this.showSearchBar = !this.showSearchBar;
+    this.showSearchBar = this.showSearchBar;
     if (this.showSearchBar) {
       setTimeout(() => {
         this.searchBar.nativeElement.focus();

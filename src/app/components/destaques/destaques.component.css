@@ -42,15 +42,6 @@ li:hover {
    height: 18px;
 }
 
-.destaque-1, .destaque-2, .destaque-3 {
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-
-   transition-property: all;
-   transition-duration: 2s;
-}
-
 .destaques-img {
    display: flex;
 }
