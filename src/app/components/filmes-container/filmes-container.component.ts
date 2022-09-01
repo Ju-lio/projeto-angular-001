@@ -1,43 +1,20 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { Midia } from 'src/app/models/midia.model';
 
-import { FilmesContainerService } from 'src/app/services/filmes-container.service';
+import { MidiasService } from 'src/app/services/midias.service';
 
 @Component({
   selector: 'app-filmes-container',
   templateUrl: './filmes-container.component.html',
   styleUrls: ['./filmes-container.component.css'],
-  providers: [FilmesContainerService],
+  providers: [MidiasService],
 })
-export class FilmesContainerComponent implements OnInit {
+export class FilmesContainerComponent {
   @ViewChild('aba') abaElement!: ElementRef;
+  @Input() containerTitle!: string;
+  @Input() midias!: Midia[];
 
-  @Input() containerTitle: string = '';
-  @Input() genre: string = '';
-  scrollValue: number = 0;
-
-  midias: Midia[] = [];
-
-  constructor(private filmesContainerService: FilmesContainerService) {}
-
-  ngOnInit() {
-    this.midias = this.filmesContainerService.loadFilmes(this.genre);
-  }
-
-  getMidia(idx: number, prop: string) {
-    switch (prop) {
-      case 'titulo':
-        return this.midias![idx].titulo;
-      case 'src':
-        return this.midias![idx].src;
-      case 'ano':
-        return this.midias![idx].ano;
-      case 'duracao':
-        return this.midias![idx].duracao;
-      default:
-        return '';
-    }
-  }
+  constructor() {}
 
   nextClick() {
     if (

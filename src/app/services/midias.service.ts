@@ -1,23 +1,15 @@
+import { of } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 import { Midia } from 'src/app/models/midia.model';
 
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class FilmesContainerService {
-  loadFilmes(genre: string) {
-    if (genre == 'filme') {
-      return this.getFilmesMaisAcess();
-    } else if (genre == 'serie') {
-      return this.getSeriesMaisAcess(); //##JSC
-    } else {
-      return [];
-    }
-  }
+export class MidiasService {
+  getMidias() {
+    const midias: Midia[] = [];
 
-  getFilmesMaisAcess() {
-    const filmes: Midia[] = [];
-
-    filmes.push({
+    midias.push({
       titulo: 'BLADE RUNNER 2049',
       src: '/assets/image-17.png',
       ano: '2017',
@@ -27,7 +19,7 @@ export class FilmesContainerService {
         'Em Blade Runner 2049, após os problemas enfrentados com os Nexus 8, uma nova espécie de replicantes é desenvolvida, de forma que seja mais obediente aos humanos. Um deles é K (Ryan Gosling), um blade runner que caça replicantes foragidos para a polícia de Los Angeles. Após encontrar Sapper Morton (Dave Bautista), K descobre um fascinante segredo: a replicante Rachel (Sean Young) teve um filho, mantido em sigilo até então. A possibilidade de que replicantes se reproduzam pode desencadear uma guerra deles com os humanos, o que faz com que a tenente Joshi (Robin Wright), chefe de K, o envie para encontrar e eliminar a criança.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'THE BATMAN',
       src: '/assets/image-18.png',
       ano: '2022',
@@ -37,7 +29,7 @@ export class FilmesContainerService {
         'The Batman segue o segundo ano de Bruce Wayne (Robert Pattinson) como o herói de Gotham, causando medo nos corações dos criminosos da sombria cidade. Com apenas alguns aliados de confiança - Alfred Pennyworth (Andy Serkis) e o tenente James Gordon (Jeffrey Wright) - entre a rede corrupta de funcionários e figuras importantes do distrito, o vigilante solitário se estabeleceu como a única personificação da vingança entre seus concidadãos. Durante uma de suas investigações, Bruce acaba envolvendo a si mesmo e Gordon em um jogo de gato e rato, ao investigar uma série de maquinações sádicas em uma trilha de pistas enigmáticas estabelecida pelo vilão Charada.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'EVERYTHING EVERYWHERE ALL AT ONCE',
       src: '/assets/image-16.png',
       ano: '2022',
@@ -47,7 +39,7 @@ export class FilmesContainerService {
         'Everything everywhere all at once acompanhamos uma sobrecarregada imigrante chinesa, Evelyn Wang (Michelle Yeoh) que com sua lavanderia à beira do fracasso e seu casamento com o marido covarde em ruínas, ela luta para lidar com tudo, incluindo um relacionamento ruim com seu pai crítico e sua filha (Stephanie Hsu). E, como se não bastasse enfrentar a crise pessoal, Evelyn precisa se preparar para uma reunião desagradável com uma burocrata impessoal: Deirdre (Jamie Lee Curtis), a auditora da Receita Federal. No entanto, à medida que a agente severa perde a paciência, uma inexplicável fenda no multiverso se abre, e se torna uma possibilidade para a exploração reveladora de realidades paralelas.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'NIGHTCRAWLER',
       src: '/assets/image-0.png',
       ano: '2014',
@@ -57,7 +49,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'FIGHT CLUB',
       src: '/assets/image-1.png',
       ano: '1999',
@@ -67,7 +59,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'NO COUNTRY FOR OLD MAN',
       src: '/assets/image-2.png',
       ano: '2007 ',
@@ -77,7 +69,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'NOCTURNAL ANIMALS',
       src: '/assets/image-3.png',
       ano: '2016 ',
@@ -87,7 +79,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'VIVARIUM',
       src: '/assets/image-4.png',
       ano: '2019  ',
@@ -97,7 +89,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'MARROWBONE',
       src: '/assets/image-5.png',
       ano: '2017 ',
@@ -107,7 +99,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'DONNIE DARKO',
       src: '/assets/image-6.png',
       ano: '2001  ',
@@ -117,7 +109,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    filmes.push({
+    midias.push({
       titulo: 'CONJURING',
       src: '/assets/image-7.png',
       ano: '2013',
@@ -127,13 +119,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    return filmes;
-  }
-
-  getSeriesMaisAcess() {
-    const series: Midia[] = [];
-
-    series.push({
+    midias.push({
       titulo: 'EUPHORIA',
       src: '/assets/image-8.png',
       ano: '2019',
@@ -143,7 +129,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    series.push({
+    midias.push({
       titulo: 'BREAKING BAD',
       src: '/assets/image-9.png',
       ano: '2008',
@@ -153,7 +139,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    series.push({
+    midias.push({
       titulo: 'SUPERNATURAL',
       src: '/assets/image-10.png',
       ano: '2005',
@@ -163,7 +149,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    series.push({
+    midias.push({
       titulo: 'THE BOYS',
       src: '/assets/image-11.png',
       ano: '2019',
@@ -173,7 +159,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    series.push({
+    midias.push({
       titulo: 'VAMPIRE DIARES',
       src: '/assets/image-12.png',
       ano: '2009',
@@ -183,7 +169,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    series.push({
+    midias.push({
       titulo: 'STRANGER THINGS',
       src: '/assets/image-13.png',
       ano: '2016',
@@ -193,7 +179,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    series.push({
+    midias.push({
       titulo: 'WANDAVISION',
       src: '/assets/image-14.png',
       ano: '2021',
@@ -203,7 +189,7 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    series.push({
+    midias.push({
       titulo: 'TEEN WOLF',
       src: '/assets/image-15.png',
       ano: '2011',
@@ -213,6 +199,6 @@ export class FilmesContainerService {
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     });
 
-    return series;
+    return of(new HttpResponse<Midia[]>({ body: midias }));
   }
 }

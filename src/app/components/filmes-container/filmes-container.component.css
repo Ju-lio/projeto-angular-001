@@ -19,6 +19,7 @@ h1 {
    display: flex;
    overflow: hidden;
    padding: 0 100px;
+   height: 300px;
 }
 
 #prior, #next {

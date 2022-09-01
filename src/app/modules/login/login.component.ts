@@ -1,5 +1,6 @@
+import { Subject, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { LoginContainerService } from 'src/app/services/login.service';
+import { PerfisService } from 'src/app/services/perfis.service';
 import { Perfil } from 'src/app/models/perfil.model';
 
 @Component({
@@ -10,9 +11,22 @@ import { Perfil } from 'src/app/models/perfil.model';
 export class LoginComponent implements OnInit {
   perfis!: Perfil[];
 
-  constructor(private loginContainerService: LoginContainerService) {}
+  destroy$: Subject<unknown> = new Subject();
 
-  ngOnInit(): void {
-    this.perfis = this.loginContainerService.loadPerfis();
+  constructor(private perfisService: PerfisService) {}
+
+  ngOnInit() {
+    this.getPerfis();
+  }
+
+  getPerfis() {
+    this.perfisService
+      .getPerfis()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: response => {
+          this.perfis = response?.body ?? [];
+        },
+      });
   }
 }

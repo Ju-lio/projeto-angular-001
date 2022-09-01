@@ -8,9 +8,9 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 export class HeaderComponent {
   showSearchBar: boolean = false;
 
-  @Input() idPerfil: string = '';
-  @Input() nomePerfil: string = '';
-  @Input() srcPerfil: string = '';
+  @Input() idPerfil?: string;
+  @Input() nomePerfil?: string;
+  @Input() srcPerfil?: string;
 
   @ViewChild('searchBar') searchBar!: ElementRef;
 

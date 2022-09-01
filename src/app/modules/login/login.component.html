@@ -2,9 +2,9 @@
    <div>
       <h1>Quem está assistindo?</h1>
       <div class="perfis">
-         <div *ngFor="let m of perfis;index as i">
-            <img src="{{perfis[i].src}}" [routerLink]="['home',perfis[i].id]">
-            <h2>{{perfis[i].nome}}</h2>
+         <div *ngFor="let perfil of perfis;index as i">
+            <img [src]="perfil.src" [routerLink]="['home',perfil.id]">
+            <h2>{{perfil.nome}}</h2>
          </div>
       </div>
    </div>

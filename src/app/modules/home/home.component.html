@@ -1,13 +1,13 @@
 <app-destaques></app-destaques>
 
 <app-header 
-   [idPerfil]="perfilLogado[0].id"
-   [nomePerfil]="perfilLogado[0].nome"
-   [srcPerfil]="perfilLogado[0].src"
+   [idPerfil]="perfilLogado.id"
+   [nomePerfil]="perfilLogado.nome"
+   [srcPerfil]="perfilLogado.src"
 ></app-header>
 
-<app-filmes-container [containerTitle]="'FILMES'" [genre]="'filme'"></app-filmes-container>
+<app-filmes-container [containerTitle]="'FILMES'" [midias]="getMidiasTipo('filme')"></app-filmes-container>
 
-<app-filmes-container [containerTitle]="'SERIES'" [genre]="'serie'"></app-filmes-container>
+<app-filmes-container [containerTitle]="'SERIES'" [midias]="getMidiasTipo('serie')"></app-filmes-container>
 
 <app-footer></app-footer>

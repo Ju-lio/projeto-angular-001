@@ -1,41 +1,64 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Midia } from 'src/app/models/midia.model';
+import { MidiasService } from 'src/app/services/midias.service';
+import { PerfisService } from 'src/app/services/perfis.service';
+import { Perfil } from './../../models/perfil.model';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { Perfil } from 'src/app/models/perfil.model';
-import { LoginContainerService } from 'src/app/services/login.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit, OnDestroy {
-  id: string = 'usr1';
+export class HomeComponent implements OnInit {
+  perfilLogado!: Perfil;
 
-  perfilLogado: Perfil[] = [];
+  midias!: Midia[];
 
-  perfis: Perfil[] = [];
-
-  inscricao!: Subscription;
+  destroy$: Subject<unknown> = new Subject();
 
   constructor(
-    private route: ActivatedRoute,
-    private loginContainerService: LoginContainerService
-  ) {
-    this.id = this.route.snapshot.params['id'];
-    this.perfis = this.loginContainerService.loadPerfis();
-  }
+    private activatedRoute: ActivatedRoute,
+    private perfisService: PerfisService,
+    private midiasService: MidiasService
+  ) {}
 
   ngOnInit(): void {
-    this.inscricao = this.route.params.subscribe((params: any) => {
-      this.id = params['id'];
-    });
-    this.perfilLogado = this.perfis.filter(p => {
-      return p.id === this.id;
-    });
+    this.getPerfis();
+    this.getMidias();
   }
 
-  ngOnDestroy() {
-    this.inscricao.unsubscribe();
+  getPerfis() {
+    this.perfisService
+      .getPerfis()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: response => {
+          const perfis = response?.body ?? [];
+          this.setPerfilLogado(perfis);
+        },
+      });
+  }
+
+  getMidias() {
+    this.midiasService
+      .getMidias()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: response => {
+          this.midias = response?.body ?? [];
+        },
+      });
+  }
+
+  getMidiasTipo(tipo: string) {
+    return this.midias.filter(midia => midia.tipo === tipo);
+  }
+
+  setPerfilLogado(perfis: Perfil[]) {
+    const idPerfil = this.activatedRoute.snapshot.params['id'];
+    this.perfilLogado =
+      perfis.find(perfil => perfil.id === idPerfil) ?? ({} as Perfil);
   }
 }

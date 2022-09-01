@@ -4,7 +4,7 @@
 		<div id="prior" (click)="priorClick()"></div>
 		<div id="container" #aba>
 			<app-filme
-			*ngFor="let m of midias;index as i"
+			*ngFor="let midia of midias;index as i"
 			[filmeTitulo]="midias[i].titulo | uppercase"
 			[filmeSrc]="midias[i].src"
 			[filmeAno]="midias[i].ano"

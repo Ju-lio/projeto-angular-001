@@ -11,36 +11,36 @@
         <div>
             <div *ngIf="destaque === 'destaque-1'">
                 <app-destaque-dados
-                    [titulo]="midia[ destaques[0] ].titulo"
-                    [ano]="midia[ destaques[0] ].ano"
-                    [duracao]="midia[ destaques[0] ].duracao"
-                    [sinopse]="midia[ destaques[0] ].sinopse"
+                    [titulo]="midias[ destaques[0] ].titulo"
+                    [ano]="midias[ destaques[0] ].ano"
+                    [duracao]="midias[ destaques[0] ].duracao"
+                    [sinopse]="midias[ destaques[0] ].sinopse"
                     >
                 </app-destaque-dados>
             </div>
             <div *ngIf="destaque === 'destaque-2'">
                 <app-destaque-dados
-                    [titulo]="midia[ destaques[1] ].titulo"
-                    [ano]="midia[ destaques[1] ].ano"
-                    [duracao]="midia[ destaques[1] ].duracao"
-                    [sinopse]="midia[ destaques[1] ].sinopse"
+                    [titulo]="midias[ destaques[1] ].titulo"
+                    [ano]="midias[ destaques[1] ].ano"
+                    [duracao]="midias[ destaques[1] ].duracao"
+                    [sinopse]="midias[ destaques[1] ].sinopse"
                     >
                 </app-destaque-dados>
             </div>
             <div *ngIf="destaque === 'destaque-3'">
                 <app-destaque-dados
-                    [titulo]="midia[ destaques[2] ].titulo"
-                    [ano]="midia[ destaques[2] ].ano"
-                    [duracao]="midia[ destaques[2] ].duracao"
-                    [sinopse]="midia[ destaques[2] ].sinopse"
+                    [titulo]="midias[ destaques[2] ].titulo"
+                    [ano]="midias[ destaques[2] ].ano"
+                    [duracao]="midias[ destaques[2] ].duracao"
+                    [sinopse]="midias[ destaques[2] ].sinopse"
                     >
                 </app-destaque-dados>
             </div>
         </div>
         <div class="destaques-img">
-            <img [style.opacity]="destaque === 'destaque-1' ? 1 : 0" src="{{midia[ destaques[0] ].src}}">
-            <img [style.opacity]="destaque === 'destaque-2' ? 1 : 0" src="{{midia[ destaques[1] ].src}}">
-            <img [style.opacity]="destaque === 'destaque-3' ? 1 : 0" src="{{midia[ destaques[2] ].src}}">
+            <img [style.opacity]="destaque === 'destaque-1' ? 1 : 0" src="{{midias[ destaques[0] ].src}}">
+            <img [style.opacity]="destaque === 'destaque-2' ? 1 : 0" src="{{midias[ destaques[1] ].src}}">
+            <img [style.opacity]="destaque === 'destaque-3' ? 1 : 0" src="{{midias[ destaques[2] ].src}}">
         </div>
     </div>
 </header>

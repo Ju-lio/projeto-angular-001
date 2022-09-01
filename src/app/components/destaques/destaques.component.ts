@@ -1,6 +1,7 @@
+import { Subject, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
-import { FilmesContainerService } from 'src/app/services/filmes-container.service';
+import { MidiasService } from 'src/app/services/midias.service';
 import { Midia } from 'src/app/models/midia.model';
 
 @Component({
@@ -11,11 +12,11 @@ import { Midia } from 'src/app/models/midia.model';
 export class DestaquesComponent implements OnInit {
   destaque: string = 'destaque-1';
   clicked: boolean = false;
-  midia: Midia[] = [];
+  midias!: Midia[];
+  destaques!: number[];
+  destroy$: Subject<unknown> = new Subject();
 
-  destaques: number[] = [];
-
-  constructor(private filmesContainerService: FilmesContainerService) {}
+  constructor(private midiasService: MidiasService) {}
 
   changeDestaque(destaque: string) {
     this.destaque = destaque;
@@ -24,9 +25,19 @@ export class DestaquesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.midia = this.filmesContainerService.loadFilmes('filme');
+    this.getMidias();
     this.getDestaques();
     this.slide();
+  }
+  getMidias() {
+    this.midiasService
+      .getMidias()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: response => {
+          this.midias = response?.body ?? [];
+        },
+      });
   }
 
   slide() {
@@ -50,7 +61,7 @@ export class DestaquesComponent implements OnInit {
     let valor: number;
     const destaques: number[] = [];
     for (let i = 0; i < 3; i++) {
-      valor = this.getRamdom(0, this.midia.length);
+      valor = this.getRamdom(0, this.midias.length - 1);
       if (valor === destaques[i - 1] || valor === destaques[i - 2]) {
         i--;
       } else {
