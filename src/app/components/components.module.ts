@@ -7,6 +7,7 @@ import { DestaquesComponent } from 'src/app/components/destaques/destaques.compo
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,6 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     PageNotFoundComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
 })
 export class ComponentsModule {}

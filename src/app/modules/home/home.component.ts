@@ -1,10 +1,11 @@
+import { Component, OnInit } from '@angular/core';
+
+import { Subject, takeUntil } from 'rxjs';
 import { Midia } from 'src/app/models/midia.model';
 import { MidiasService } from 'src/app/services/midias.service';
 import { PerfisService } from 'src/app/services/perfis.service';
-import { Perfil } from './../../models/perfil.model';
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
+import { Perfil } from 'src/app/models/perfil.model';
 
 @Component({
   selector: 'app-home',

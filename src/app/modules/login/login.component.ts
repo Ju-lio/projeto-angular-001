@@ -1,5 +1,6 @@
-import { Subject, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+
+import { Subject, takeUntil } from 'rxjs';
 import { PerfisService } from 'src/app/services/perfis.service';
 import { Perfil } from 'src/app/models/perfil.model';
 
