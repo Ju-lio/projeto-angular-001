@@ -64,6 +64,14 @@ header {
    font-size: 22pt;
    padding: 5px 15px;
    color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.header-title img {
+   height: 45px;
 }
 
 .header-settings {

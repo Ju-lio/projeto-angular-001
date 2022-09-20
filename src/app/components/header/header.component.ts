@@ -16,12 +16,14 @@ export class HeaderComponent {
 
   constructor() {}
 
-  changeSearchBar() {
-    this.showSearchBar = this.showSearchBar;
-    if (this.showSearchBar) {
-      setTimeout(() => {
-        this.searchBar.nativeElement.focus();
-      }, 1);
+  changeSearchBar(forceVerify: boolean = false) {
+    if (!this.showSearchBar || forceVerify) {
+      this.showSearchBar = !this.showSearchBar;
+      if (this.showSearchBar) {
+        setTimeout(() => {
+          this.searchBar.nativeElement.focus();
+        }, 1);
+      }
     }
   }
 }

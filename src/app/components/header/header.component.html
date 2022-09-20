@@ -1,7 +1,8 @@
 <header [style.background] = "">
    <nav class="header-bar">
       <div class="header-title">
-         NETEFLIKS
+         <img src="https://img.icons8.com/color/48/000000/wizard.png"/>
+         HATFLIX
       </div>
       <ul>
          <li class="button">
@@ -37,7 +38,7 @@
          <h1 class="show-text" *ngIf="!showSearchBar">
             Busca
          </h1>
-         <input #searchBar placeholder="O que vamos assistir hoje?" type="text" id="search-bar" *ngIf="showSearchBar" (blur)="changeSearchBar()">
+         <input #searchBar placeholder="O que vamos assistir hoje?" type="text" id="search-bar" *ngIf="showSearchBar" (blur)="changeSearchBar(true)">
       </div>
       <div class="button">
          <img class="imgPerfil" [src]="srcPerfil">
