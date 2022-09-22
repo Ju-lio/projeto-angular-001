@@ -11,6 +11,7 @@ import { Midia } from 'src/app/models/midia.model';
 })
 export class DestaquesComponent implements OnInit {
   destaque: string = 'destaque-1';
+  destaqueIndex: number = 1;
   clicked: boolean = false;
   midias!: Midia[];
   destaques!: number[];

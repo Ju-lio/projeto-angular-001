@@ -28,16 +28,23 @@ h1 {
    height: 240px;
    z-index: 1;
    cursor: pointer;
+   opacity: 0.5;
+   transition: 0.5s all ease;
 }
 
 #prior:hover, #next:hover {
    width: 30px;
+   opacity: 1;
 }
 
 #prior {
    left: 0;
-   background-image: linear-gradient(to right,#0C0C0C , #0C0C0C , transparent);
-   transition: 0.5s all ease;
+   background-image: linear-gradient(to right,#0C0C0C ,#0C0C0C , #0c0c0c00);
+}
+
+#next {
+   right: 0;
+   background-image: linear-gradient(to left,#0C0C0C , #0C0C0C , #0c0c0c00);
 }
 
 #prior::after {
@@ -57,12 +64,6 @@ h1 {
    border-top: 15px solid transparent;
    border-right: 25px solid #FFFFFFB4;
    border-bottom: 15px solid transparent;
-}
-
-#next {
-   right: 0;
-   background-image: linear-gradient(to left,#0C0C0C , #0C0C0C , transparent);
-   transition: 0.5s all ease;
 }
 
 #next::after {

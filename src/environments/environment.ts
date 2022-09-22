@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
+  destaquesQuantidade: 3,
   tmbdToken: '998efe8a820d1d35fc499776d2126c5f',
+  tmdbImagePath: 'https://image.tmdb.org/t/p/original/',
 };
 
 /*
