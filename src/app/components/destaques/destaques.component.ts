@@ -26,7 +26,6 @@ export class DestaquesComponent implements OnInit {
 
   ngOnInit() {
     this.getMidias();
-    this.getDestaques();
     this.slide();
   }
   getMidias() {
@@ -35,7 +34,8 @@ export class DestaquesComponent implements OnInit {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: response => {
-          this.midias = response?.body ?? [];
+          this.midias = response ?? [];
+          this.getDestaques();
         },
       });
   }

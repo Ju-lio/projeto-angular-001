@@ -48,13 +48,14 @@ export class HomeComponent implements OnInit {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: response => {
-          this.midias = response?.body ?? [];
+          this.midias = response ?? [];
+          console.log(response);
         },
       });
   }
 
   getMidiasTipo(tipo: string) {
-    return this.midias.filter(midia => midia.tipo === tipo);
+    return this.midias?.filter(midia => midia.tipo === tipo);
   }
 
   setPerfilLogado(perfis: Perfil[]) {

@@ -8,6 +8,7 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,6 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     PageNotFoundComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
 })
 export class ComponentsModule {}
