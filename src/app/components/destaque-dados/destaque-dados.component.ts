@@ -8,10 +8,8 @@ import { Component, Input } from '@angular/core';
 export class DestaqueDadosComponent {
   @Input() titulo: string = '';
   @Input() ano: string = '';
-  @Input() duracao: string = '';
+  @Input() nota: string = '';
   @Input() sinopse: string = '';
-
-  destaqueFavoritado: boolean = false;
 
   constructor() {}
 }

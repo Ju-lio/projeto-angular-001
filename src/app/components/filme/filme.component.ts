@@ -9,7 +9,7 @@ export class FilmeComponent {
   @Input() filmeTitulo: string = '';
   @Input() filmeSrc: string = '';
   @Input() filmeAno: string = '';
-  @Input() filmeDuracao: string = '';
+  @Input() filmeNota: string = '';
 
   constructor() {}
 }

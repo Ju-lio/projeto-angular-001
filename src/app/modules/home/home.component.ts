@@ -6,6 +6,7 @@ import { MidiasService } from 'src/app/services/midias.service';
 import { PerfisService } from 'src/app/services/perfis.service';
 import { ActivatedRoute } from '@angular/router';
 import { Perfil } from 'src/app/models/perfil.model';
+import { TipoMidia } from 'src/app/enums/tipoMidia.enum';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +15,11 @@ import { Perfil } from 'src/app/models/perfil.model';
 })
 export class HomeComponent implements OnInit {
   perfilLogado!: Perfil;
-
-  midias!: Midia[];
-
+  filmes!: Midia[];
+  series!: Midia[];
   destroy$: Subject<unknown> = new Subject();
+  readonly FILME = TipoMidia.FILME;
+  readonly SERIE = TipoMidia.SERIE;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,7 +29,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPerfis();
-    this.getMidias();
+    this.getFilmes();
+    this.getSeries();
   }
 
   getPerfis() {
@@ -42,20 +45,37 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  getMidias() {
+  getFilmes() {
     this.midiasService
-      .getMidias()
+      .getFilmes()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: response => {
-          this.midias = response ?? [];
-          console.log(response);
+          this.filmes = response ?? [];
         },
       });
   }
 
-  getMidiasTipo(tipo: string) {
-    return this.midias?.filter(midia => midia.tipo === tipo);
+  getSeries() {
+    this.midiasService
+      .getSeries()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: response => {
+          this.series = response ?? [];
+        },
+      });
+  }
+
+  getMidiasTipo(tipo: string): Midia[] {
+    switch (tipo) {
+      case 'filme':
+        return this.filmes;
+      case 'serie':
+        return this.series;
+      default:
+        return [];
+    }
   }
 
   setPerfilLogado(perfis: Perfil[]) {

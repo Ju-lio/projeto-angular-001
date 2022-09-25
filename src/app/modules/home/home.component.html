@@ -4,10 +4,19 @@
    [idPerfil]="perfilLogado.id"
    [nomePerfil]="perfilLogado.nome"
    [srcPerfil]="perfilLogado.src"
-></app-header>
+   >
+</app-header>
 
-<app-filmes-container [containerTitle]="'FILMES'" [midias]="getMidiasTipo('filme')"></app-filmes-container>
+<app-filmes-container
+   [containerTitle]="'FILMES'"
+   [midias]="getMidiasTipo(FILME)"
+   >
+</app-filmes-container>
 
-<app-filmes-container [containerTitle]="'SERIES'" [midias]="getMidiasTipo('serie')"></app-filmes-container>
+<app-filmes-container
+   [containerTitle]="'SERIES'"
+   [midias]="getMidiasTipo(SERIE)"
+   >
+</app-filmes-container>
 
 <app-footer></app-footer>

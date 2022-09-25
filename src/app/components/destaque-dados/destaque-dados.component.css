@@ -23,8 +23,8 @@ h2 {
 h3 {
    margin: 15px 25px 25px;
    font-size: 15pt;
-   width: 60vw;
-   height: 35vh;
+   width: 25vw;
+   height: 50vh;
    overflow-y: auto;
    color: #999999;
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MidiasService } from 'src/app/services/midias.service';
 import { Midia } from 'src/app/models/midia.model';
+import { Destaque } from 'src/app/enums/destaque.enum';
 
 @Component({
   selector: 'app-destaques',
@@ -10,11 +11,13 @@ import { Midia } from 'src/app/models/midia.model';
   styleUrls: ['./destaques.component.css'],
 })
 export class DestaquesComponent implements OnInit {
-  destaque: string = 'destaque-1';
+  readonly DESTAQUE = Destaque.DESTAQUE;
   destaqueIndex: number = 1;
+  destaque: string = this.DESTAQUE + this.destaqueIndex.toString();
   clicked: boolean = false;
-  midias!: Midia[];
-  destaques!: number[];
+  series!: Midia[];
+  filmes!: Midia[];
+  destaques!: Midia[];
   destroy$: Subject<unknown> = new Subject();
 
   constructor(private midiasService: MidiasService) {}
@@ -26,17 +29,30 @@ export class DestaquesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getMidias();
+    this.getFilmes();
+    this.getSeries();
     this.slide();
   }
-  getMidias() {
+
+  getFilmes() {
     this.midiasService
-      .getMidias()
+      .getFilmes()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: response => {
-          this.midias = response ?? [];
+          this.filmes = response ?? [];
           this.getDestaques();
+        },
+      });
+  }
+
+  getSeries() {
+    this.midiasService
+      .getSeries()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: response => {
+          this.series = response ?? [];
         },
       });
   }
@@ -44,7 +60,7 @@ export class DestaquesComponent implements OnInit {
   slide() {
     var num: number = parseInt(this.destaque.substring(9, 10));
 
-    if (num == 3) num = 0;
+    if (num == 2) num = -1;
 
     num += 1;
 
@@ -60,13 +76,16 @@ export class DestaquesComponent implements OnInit {
 
   getDestaques() {
     let valor: number;
-    const destaques: number[] = [];
+    const destaques: Midia[] = [];
     for (let i = 0; i < 3; i++) {
-      valor = this.getRamdom(0, this.midias.length - 1);
-      if (valor === destaques[i - 1] || valor === destaques[i - 2]) {
+      valor = this.getRamdom(0, this.filmes.length - 1);
+      if (
+        this.filmes[valor] === destaques[i - 1] ||
+        this.filmes[valor] === destaques[i - 2]
+      ) {
         i--;
       } else {
-        destaques.push(valor);
+        destaques.push(this.filmes[valor]);
       }
     }
     this.destaques = destaques;

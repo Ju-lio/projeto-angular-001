@@ -2,45 +2,30 @@
     <div class="fundo">
         <nav>
             <ul>
-                <li [class.active]="destaque === 'destaque-1'" (click)="changeDestaque('destaque-1')"></li>
-                <li [class.active]="destaque === 'destaque-2'" (click)="changeDestaque('destaque-2')"></li>
-                <li [class.active]="destaque === 'destaque-3'" (click)="changeDestaque('destaque-3')"></li>
+                <li *ngFor="let d of destaques;index as i"
+                    [class.active]="destaque === DESTAQUE+(i).toString()"
+                    (click)="changeDestaque(DESTAQUE+(i).toString())"
+                >
+                </li>
             </ul>
         </nav>
 
         <div>
-            <div *ngFor="let midia of midias;index as i">
-                <app-destaque-dados *ngIf="destaque === 'destaque-'+ (i+1).toString()">
-                    [titulo]="midias[ destaques[0] ].titulo"
-                    [ano]="midias[ destaques[0] ].ano"
-                    [duracao]="midias[ destaques[0] ].duracao"
-                    [sinopse]="midias[ destaques[0] ].sinopse"
-                    >
-                </app-destaque-dados>
-            </div>
-            <div *ngIf="destaque === 'destaque-2'">
-                <app-destaque-dados
-                    [titulo]="midias[ destaques[1] ].titulo"
-                    [ano]="midias[ destaques[1] ].ano"
-                    [duracao]="midias[ destaques[1] ].duracao"
-                    [sinopse]="midias[ destaques[1] ].sinopse"
-                    >
-                </app-destaque-dados>
-            </div>
-            <div *ngIf="destaque === 'destaque-3'">
-                <app-destaque-dados
-                    [titulo]="midias[ destaques[2] ].titulo"
-                    [ano]="midias[ destaques[2] ].ano"
-                    [duracao]="midias[ destaques[2] ].duracao"
-                    [sinopse]="midias[ destaques[2] ].sinopse"
-                    >
-                </app-destaque-dados>
+            <div *ngFor="let d of destaques;index as i">
+                <app-destaque-dados *ngIf="destaque === DESTAQUE+(i).toString()"
+                    [titulo]="destaques[i].titulo"
+                    [ano]="destaques[i].ano"
+                    [nota]="destaques[i].nota"
+                    [sinopse]="destaques[i].sinopse"
+                >
+                </app-destaque-dados>                
             </div>
         </div>
         <div class="destaques-img">
-            <img [style.opacity]="destaque === 'destaque-1' ? 1 : 0" src="{{midias[ destaques[0] ].src}}">
-            <img [style.opacity]="destaque === 'destaque-2' ? 1 : 0" src="{{midias[ destaques[1] ].src}}">
-            <img [style.opacity]="destaque === 'destaque-3' ? 1 : 0" src="{{midias[ destaques[2] ].src}}">
+            <img *ngFor="let midia of destaques;index as i" 
+                [style.opacity]="destaque === DESTAQUE+(i).toString() ? 1 : 0"
+                src="{{destaques[i].src}}"
+            >
         </div>
     </div>
 </header>
