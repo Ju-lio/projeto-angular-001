@@ -33,7 +33,7 @@ export class MidiasService {
                 titulo: filme.title,
                 sinopse: filme.overview,
                 ano: filme.release_date.substring(0, 4),
-                nota: filme.vote_average,
+                nota: this.corrigeNota(filme.vote_average),
                 src: this.TMBD_IMAGEPATH + filme.backdrop_path,
                 tipo: 'filme',
               } as Midia)
@@ -63,12 +63,20 @@ export class MidiasService {
                 titulo: serie.name,
                 sinopse: serie.overview,
                 ano: serie.first_air_date.substring(0, 4),
-                nota: serie.vote_average,
+                nota: this.corrigeNota(serie.vote_average),
                 src: this.TMBD_IMAGEPATH + serie.backdrop_path,
                 tipo: 'serie',
               } as Midia)
           )
         )
       );
+  }
+
+  corrigeNota(nota: string) {
+    if (nota.toString().length === 1) {
+      return nota.toString() + '.0';
+    } else {
+      return nota.toString();
+    }
   }
 }

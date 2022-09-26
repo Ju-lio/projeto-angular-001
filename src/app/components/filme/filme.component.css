@@ -57,4 +57,11 @@ h1 {
 h2 {
    color: rgb(196, 196, 196);
    margin-left: 15px;
+   display: flex;
+   align-items: center;
+}
+
+h2 svg {
+   width: 10px;
+   height: 10px;
 }

@@ -9,22 +9,32 @@ h1 {
 
 .info {
    display: flex;
+   position: relative;
+}
+
+.botoes {
+   position: absolute;
+   display: flex;
+   bottom: 50px;
 }
 
 h2 {
    font-size: 18pt;
    font-weight: bold;
+   font-family: consolas;
    margin: 0 30px 0 0;
    color: #999999;
    margin-left: 25px;
    font-size: 18pt;
    font-weight: normal;
+   display: flex;
+   align-items: center;
 }
 h3 {
    margin: 15px 25px 25px;
    font-size: 15pt;
-   width: 25vw;
-   height: 50vh;
+   width: 40vw;
+   height: 40vh;
    overflow-y: auto;
    color: #999999;
 }
